@@ -17,19 +17,19 @@ export const App = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
-      <Text style={styles.title}>My Name : {nameText}</Text>
-      <Text style={styles.title}>My Age : {ageText} y/o</Text>
-      <TextInput
-        placeholder="Name"
-        onChangeText={textUpdate}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Age"
-        onChangeText={AgeUpdate}
-        style={styles.input}
-        keyboardType='numeric'
-      />
+        <Text style={styles.title}>My Name : {nameText}</Text>
+        <Text style={styles.title}>My Age : {ageText} y/o</Text>
+        <TextInput
+          placeholder="Name"
+          onChangeText={textUpdate}
+          style={styles.input}
+        />
+        <TextInput
+          placeholder="Age"
+          onChangeText={AgeUpdate}
+          style={styles.input}
+          keyboardType='numeric'
+        />
       </View>
     </SafeAreaView>
 
@@ -38,18 +38,18 @@ export const App = () => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex:1
+    flex: 1
   },
   container: {
-    backgroundColor:'skyblue',
-    flex:1,
+    backgroundColor: 'skyblue',
+    flex: 1,
   },
   title: {
     fontSize: 40,
     color: '#4d4d4d',
-    marginStart:10
+    marginStart: 10
   },
-  input:{
+  input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
