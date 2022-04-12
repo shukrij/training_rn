@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, TextInput } from 'react-native';
 import {textInputStyle, formInputStyle} from '../styles';
 import { useNavigation } from '@react-navigation/native';
+import { Title } from '../styles/testStyleComponent';
 
 export const LandingPage = () => {
 
@@ -19,7 +20,7 @@ export const LandingPage = () => {
     return (
       <SafeAreaView style={formInputStyle.mainContainer}>
         <View style={formInputStyle.container}>
-          <Text style={textInputStyle.title}>Name : {nameText}</Text>
+          <Title>Name : {nameText}</Title>
           <Text style={textInputStyle.title2}>Age : {ageText} y/o</Text>
           <TextInput
             placeholder="Name"
