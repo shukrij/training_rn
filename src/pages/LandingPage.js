@@ -35,7 +35,10 @@ export const LandingPage = () => {
           <Button
             title="Go To Next Page"
             color="#f194ff"
-            onPress={() => navigation.navigate('Next Page')}
+            onPress={() => navigation.navigate('Next Page',{
+              name:nameText,
+              age: ageText
+            })}
         />
         </View>
       </SafeAreaView>
