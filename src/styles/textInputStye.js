@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 const defaultTitle = {
-    fontSize: 40,
+    fontSize: 30,
     color: '#4d4d4d',
     marginStart: 10,
 };
