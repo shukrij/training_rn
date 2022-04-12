@@ -10,8 +10,8 @@ export const formInputStyle = StyleSheet.create({
       flex: 1,
     },
     input: {
-        height: 40,
-        borderColor: 'gray',
+        height: 50,
+        borderColor: 'red',
         borderWidth: 1,
         padding:10,
         margin:10,

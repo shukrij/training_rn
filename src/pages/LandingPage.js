@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet, TextInput } from 'react-native';
-import {textInputStyle, formInputStyle} from '../styles'
+import { SafeAreaView, View, Text, Button, TextInput } from 'react-native';
+import {textInputStyle, formInputStyle} from '../styles';
+import { useNavigation } from '@react-navigation/native';
 
 export const LandingPage = () => {
 
+    const navigation = useNavigation();
     const [nameText, setNameText] = useState('')
     const textUpdate = (text) => {
       setNameText(text)
@@ -30,6 +32,11 @@ export const LandingPage = () => {
             style={formInputStyle.input}
             keyboardType='numeric'
           />
+          <Button
+            title="Go To Next Page"
+            color="#f194ff"
+            onPress={() => navigation.navigate('Next Page')}
+        />
         </View>
       </SafeAreaView>
   
