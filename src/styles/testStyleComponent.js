@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Title = styled.Text`
   font-size: 30px;
-  margin: 12px;
+  margin: 10px;
   color: ${props => props.theme.PRIMARY};
 `;
 

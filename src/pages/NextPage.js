@@ -11,8 +11,9 @@ export const NextPage = () => {
 
     return (
         <SafeAreaView style={{flex:1, alignItems:'center'}}>
-          <View style={{flex:1,justifyContent:'space-around'}}>
-            <Text style={textInputStyle.title2}>Hello {name} and I am {age} years old</Text>
+          <View style={{flex:1,justifyContent:'center'}}>
+            <Text style={textInputStyle.title3}>Name : {name} </Text>
+            <Text style={textInputStyle.title3}>Age :  {age} years old</Text>
           </View>
         </SafeAreaView>
     
