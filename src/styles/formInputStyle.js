@@ -18,9 +18,11 @@ export const formInputStyle = StyleSheet.create({
         padding:2,
         margin:2,
         borderRadius:10,
-        width: '90%',
+        width: '100%',
         backgroundColor: '#F0EDEF',
-        textAlign: 'center'
+        textAlign: 'center',
+        borderColor:'#DFDEDE',
+        borderWidth:1
     },
     btn:{
       width: 350,

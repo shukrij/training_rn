@@ -12,6 +12,11 @@ export const textInputStyle = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
     },
+    addForm:{
+        flex:1, 
+        alignItems:'flex-start',
+        margin:20,
+    },
     main:{
         height: '100%',
         width: '100%',
