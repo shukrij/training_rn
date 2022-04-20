@@ -32,7 +32,7 @@ export const Dashboard = () => {
                     age: ageText
                     })}
                     style={formInputStyle.btn}>
-                    <Text style={textInputStyle.title}>Next Page</Text>
+                    <Text style={textInputStyle.title}>Go to To Do Menu</Text>
                 </TouchableOpacity>
           </View>
         </SafeAreaView>

@@ -28,6 +28,14 @@ export const textInputStyle = StyleSheet.create({
         color: '#000',
         fontSize: 15,
     },
+    headerToDo: {
+        ...defaultTitle,
+        color: '#000',
+        fontSize: 20,
+        alignSelf:'flex-start',
+        marginStart:20,
+        fontWeight:'bold',
+    },
     title3: {
         ...defaultTitle,
         color: '#000',
@@ -36,6 +44,12 @@ export const textInputStyle = StyleSheet.create({
     coverImage: {
         flex: 1,
         justifyContent: "center"
+    },
+    listToDo: {
+        ...defaultTitle,
+        color: '#000',
+        alignSelf:'flex-start',
+        marginStart:20,
     },
     
 });
