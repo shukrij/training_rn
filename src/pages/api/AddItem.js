@@ -3,8 +3,15 @@ import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Alert, ActivityI
 import {textInputStyle, formInputStyle} from '../../styles';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector, useDispatch } from 'react-redux'
+import { setBahasa, setEnglish } from '../../redux/settingSlice';
 
 export const AddItem = () => {
+    const settingState = useSelector((state) => state.settings)
+    const lang = settingState.language
+
+    const dispatch = useDispatch()
+    
     const navigation = useNavigation();
 
     // const [nameText, setNameText] = useState('')
@@ -119,7 +126,7 @@ export const AddItem = () => {
 
     <SafeAreaView style={textInputStyle.addForm}>
         {/* first name */}
-        <Text style={{marginBottom:8}}>First Name</Text>
+        <Text style={{marginBottom:8}}>{lang.firstName}</Text>
         <TextInput
           value={addForm.first_name}
           placeholder="Enter First Name..."
@@ -127,7 +134,7 @@ export const AddItem = () => {
           onChangeText={value => updateFromInput(value, 'first_name')}
         />
         {/* last name */}
-        <Text style={{marginTop:12, marginBottom:8}}>Last Name</Text>
+        <Text style={{marginTop:12, marginBottom:8}}>{lang.lastName}</Text>
         <TextInput
           value={addForm.last_name}
           placeholder="Enter Last Name..."
@@ -135,7 +142,7 @@ export const AddItem = () => {
           onChangeText={value => updateFromInput(value, 'last_name')}
         />
         {/* email */}
-        <Text style={{marginTop:12, marginBottom:8}}>Email</Text>
+        <Text style={{marginTop:12, marginBottom:8}}>{lang.email}</Text>
         <TextInput
           value={addForm.email_value}
           placeholder="Enter Email..."
@@ -145,8 +152,29 @@ export const AddItem = () => {
         <TouchableOpacity
             onPress={addItemApi}
             style={formInputStyle.btn}>
-            <Text style={textInputStyle.title}>Submit</Text>
+            <Text style={textInputStyle.title}>{lang.btnSubmit}</Text>
         </TouchableOpacity>
+
+        {/* <TouchableOpacity
+            onPress={() => dispatch(setEnglish())}
+            style={formInputStyle.btnLang}>
+            <Text>EN</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            onPress={() => dispatch(setBahasa())}
+            style={formInputStyle.btnLang}>
+            <Text>BM</Text>
+        </TouchableOpacity> */}
+        <View style={{ flex:1, flexDirection:"row", backgroundColor:'grey'}}>
+            <Text style={textInputStyle.title2} onPress={() => dispatch(setBahasa())}> 
+                BM
+            </Text>  
+            <Text style={textInputStyle.title2}> | </Text> 
+            <Text style={textInputStyle.title2} onPress={() => dispatch(setEnglish())}> 
+                ENG
+            </Text> 
+        </View>
     </SafeAreaView>
     
     );

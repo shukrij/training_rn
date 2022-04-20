@@ -7,21 +7,24 @@ import { Dashboard } from '../pages/Dashboard';
 import { AddItem } from '../pages/api/AddItem';
 import { ThemeProvider } from 'styled-components';
 import { COLORS } from '../constant/COLORS';
+import { store } from '../redux/store'
+import { Provider } from 'react-redux'
 
 const StackPublic = createNativeStackNavigator();
 
 export const Routing = () => {
     return (
-
-      <ThemeProvider theme={COLORS}>
-        <NavigationContainer>
-          <StackPublic.Navigator>
-            <StackPublic.Screen name="Home" component={LandingPage} options={{headerShown:false}} />
-            <StackPublic.Screen name="Dashboard" component={Dashboard} option={{headerShown:true,headerTransparent:true}}/>
-            <StackPublic.Screen name="Next Page" component={NextPage} />
-            <StackPublic.Screen name="Register New User" component={AddItem} />
-          </StackPublic.Navigator>
-        </NavigationContainer>
+      <Provider store={store}>
+        <ThemeProvider theme={COLORS}>
+          <NavigationContainer>
+            <StackPublic.Navigator>
+              <StackPublic.Screen name="Home" component={LandingPage} options={{headerShown:false}} />
+              <StackPublic.Screen name="Dashboard" component={Dashboard} option={{headerShown:true,headerTransparent:true}}/>
+              <StackPublic.Screen name="Next Page" component={NextPage} />
+              <StackPublic.Screen name="Register New User" component={AddItem} />
+            </StackPublic.Navigator>
+          </NavigationContainer>
         </ThemeProvider>
+      </Provider>
     );
 };

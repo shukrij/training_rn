@@ -35,4 +35,16 @@ export const formInputStyle = StyleSheet.create({
       marginTop:10,
       marginBottom:10,
     },
+    btnLang:{
+      width: 30,
+      height:20,
+      backgroundColor:'#15aae1',
+      textAlign:'center',
+      borderRadius:10,
+      alignItems:'center',
+      justifyContent:'center',
+      marginTop:10,
+      marginBottom:10,
+      fontSize:10,
+    },
 });
