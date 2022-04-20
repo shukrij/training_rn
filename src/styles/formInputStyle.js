@@ -13,9 +13,9 @@ export const formInputStyle = StyleSheet.create({
     },
     input: {
         height: 40,
-        borderColor: 'black',
-        borderWidth: 1,
-        padding:5,
+        // borderColor: 'black',
+        // borderWidth: 1,
+        padding:2,
         margin:2,
         borderRadius:10,
         width: '90%',

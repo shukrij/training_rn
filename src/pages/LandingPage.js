@@ -35,16 +35,16 @@ export const LandingPage = () => {
             onChangeText={AgeUpdate}
             style={formInputStyle.input}
             keyboardType='numeric'
-          />
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Dashboard',{
-              name:nameText,
-              age: ageText
-            })}
-            style={formInputStyle.btn}>
-              <Text style={textInputStyle.title}>LOGIN</Text>
-          </TouchableOpacity>
-          <Text style={textInputStyle.title2}>Forgot Password | Register</Text> 
+        />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Dashboard',{
+            name:nameText,
+            age: ageText
+          })}
+          style={formInputStyle.btn}>
+            <Text style={textInputStyle.title}>LOGIN</Text>
+        </TouchableOpacity>
+        <Text style={textInputStyle.title2}>Forgot Password | Register</Text> 
           
         {/* <View style={formInputStyle.container}>
           <Title>Name : {nameText}</Title>

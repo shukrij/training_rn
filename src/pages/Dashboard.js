@@ -21,18 +21,19 @@ export const Dashboard = () => {
     }
 
     return (
-        <SafeAreaView style={{flex:1, alignItems:'center'}}>
-          <View style={{flex:1,justifyContent:'center'}}>
-            <Text style={textInputStyle.title3}>Dashboard Name : {name} </Text>
-            <Text style={textInputStyle.title3}>Age :  {age} years old</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate('Next Page',{
-                name:nameText,
-                age: ageText
-                })}
-                style={formInputStyle.btn}>
-                <Text style={textInputStyle.title}>LOGIN</Text>
-            </TouchableOpacity>
+        <SafeAreaView style={{flex:1}}>
+            <Text style={textInputStyle.title3,{alignItems:'flex-start', margin:10}}>Hi {name},</Text>
+            <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
+                <Text style={textInputStyle.title3}>Dashboard Name : {name} </Text>
+                <Text style={textInputStyle.title3}>Age :  {age} years old</Text>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Next Page',{
+                    name:nameText,
+                    age: ageText
+                    })}
+                    style={formInputStyle.btn}>
+                    <Text style={textInputStyle.title}>Next Page</Text>
+                </TouchableOpacity>
           </View>
         </SafeAreaView>
     
