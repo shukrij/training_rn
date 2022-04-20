@@ -16,7 +16,7 @@ export const AddItem = () => {
     //   setAgeText(text)
     // }
 
-    onButtonPress = () => {
+    const onButtonPress = () => {
         //navigation.navigate('Next Page')
         navigation.navigate('Dashboard',{
             name:'Ahmad',
@@ -98,7 +98,7 @@ export const AddItem = () => {
                     { 
                         text: "Yes", 
                         //onPress: () => console.log("Alert OK Pressed")
-                        onPress:() => {onButtonPress} 
+                        //onPress:() => onButtonPress
                     }
                 ]
             );
