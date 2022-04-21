@@ -2,8 +2,9 @@ import React from 'react-native';
 import styled from 'styled-components/native';
 
 export const Title = styled.Text`
-  font-size: 30px;
-  margin: 10px;
+  font-size: 25px;
+  margin: 5px;
+  margin-bottom: 15px;
   color: ${props => props.theme.PRIMARY};
 `;
 

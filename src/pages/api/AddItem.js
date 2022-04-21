@@ -1,31 +1,29 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
 import {textInputStyle, formInputStyle} from '../../styles';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux'
 import { setBahasa, setEnglish } from '../../redux/settingSlice';
+import { Title } from '../../styles/testStyleComponent'
+import {setListState} from '../../redux/itemsSlice'
 
 export const AddItem = () => {
+
     const settingState = useSelector((state) => state.settings)
     const lang = settingState.language
-
     const dispatch = useDispatch()
-    
     const navigation = useNavigation();
-
-    // const [nameText, setNameText] = useState('')
-    // const textUpdate = (text) => {
-    //   setNameText(text)
-    // }
-    // const [ageText, setAgeText] = useState('')
-    // const AgeUpdate = (text) => {
-    //   setAgeText(text)
-    // }
-
     const onButtonPress = () => {
         //navigation.navigate('Next Page')
-        navigation.navigate('Dashboard',{
+        navigation.navigate('Register New User',{
+            name:'Ahmad',
+            age: '12'
+        })
+    }
+    const onButtonPressNo = () => {
+        //navigation.navigate('Next Page')
+        navigation.navigate('Listing User',{
             name:'Ahmad',
             age: '12'
         })
@@ -77,7 +75,8 @@ export const AddItem = () => {
                 [
                     {
                         text: "No",
-                        onPress: () => console.log("Cancel Pressed"),
+                        //onPress: () => console.log("Cancel Pressed"),
+                        onPress: onButtonPressNo,
                         style: "cancel"
                     },
                     { 
@@ -112,7 +111,32 @@ export const AddItem = () => {
         })
     }
 
-  //console.log(route);
+    //console.log(route);
+    const callGetListAPI = () => {
+        axios
+        .get('https://dev-msid.posdigicert.com.my/APIEX/test_get_all_data/1', {
+            headers: {
+            Token: 'Basic a3JpZGVudGlhOlBhc3N3MHJkMjAxOQ==',
+            },
+        })
+        .then(res => {
+            console.log("Value :", res.data.data);
+            dispatch(setListState(res.data.data));
+
+            setTimeout(() => {
+            setIsLoading(false);
+            }, 2000);
+        })
+        .catch(err => {
+            console.log('err: ', err);
+            setIsLoading(false);
+        });
+    };
+
+    useEffect(() => {
+        // Func here
+        callGetListAPI()
+    }, [])
 
   return (
     
@@ -125,11 +149,12 @@ export const AddItem = () => {
     :
 
     <SafeAreaView style={textInputStyle.addForm}>
+        <Title>Please fill in all item below</Title>
         {/* first name */}
         <Text style={{marginBottom:8}}>{lang.firstName}</Text>
         <TextInput
           value={addForm.first_name}
-          placeholder="Enter First Name..."
+          placeholder={lang.plchdrFirstName}
           style={formInputStyle.input}
           onChangeText={value => updateFromInput(value, 'first_name')}
         />
@@ -137,7 +162,7 @@ export const AddItem = () => {
         <Text style={{marginTop:12, marginBottom:8}}>{lang.lastName}</Text>
         <TextInput
           value={addForm.last_name}
-          placeholder="Enter Last Name..."
+          placeholder={lang.plchdrLastName}
           style={formInputStyle.input}
           onChangeText={value => updateFromInput(value, 'last_name')}
         />
@@ -145,7 +170,7 @@ export const AddItem = () => {
         <Text style={{marginTop:12, marginBottom:8}}>{lang.email}</Text>
         <TextInput
           value={addForm.email_value}
-          placeholder="Enter Email..."
+          placeholder={lang.plchdrEmail}
           style={formInputStyle.input}
           onChangeText={value => updateFromInput(value, 'email_value')}
         />
@@ -166,7 +191,10 @@ export const AddItem = () => {
             style={formInputStyle.btnLang}>
             <Text>BM</Text>
         </TouchableOpacity> */}
-        <View style={{ flex:1, flexDirection:"row", backgroundColor:'grey'}}>
+        <View style={{ 
+            flexDirection:"row", 
+            padding:5,
+            justifyContent:'center'}}>
             <Text style={textInputStyle.title2} onPress={() => dispatch(setBahasa())}> 
                 BM
             </Text>  
@@ -174,6 +202,14 @@ export const AddItem = () => {
             <Text style={textInputStyle.title2} onPress={() => dispatch(setEnglish())}> 
                 ENG
             </Text> 
+        </View>
+        <View style={{ 
+            flexDirection:"row", 
+            padding:5,
+            justifyContent:'center'}}>
+            <Text style={textInputStyle.title2} onPress={() => navigation.navigate('Listing User')}> 
+                View All
+            </Text>
         </View>
     </SafeAreaView>
     

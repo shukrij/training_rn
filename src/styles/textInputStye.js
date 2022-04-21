@@ -14,7 +14,7 @@ export const textInputStyle = StyleSheet.create({
     },
     addForm:{
         flex:1, 
-        alignItems:'flex-start',
+        // alignItems:'flex-start',
         margin:20,
     },
     main:{
