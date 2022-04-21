@@ -36,8 +36,13 @@ export const Dashboard = () => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Register New User')}
-                    style={formInputStyle.btn}>
+                    style={formInputStyle.btn2}>
                     <Text style={textInputStyle.title}>Go to Register User</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Listing User')}
+                    style={formInputStyle.btn3}>
+                    <Text style={textInputStyle.title}>Go to User Listing</Text>
                 </TouchableOpacity>
           </View>
         </SafeAreaView>

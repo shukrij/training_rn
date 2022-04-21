@@ -5,7 +5,8 @@ import { LandingPage } from '../pages/LandingPage';
 import { NextPage } from '../pages/NextPage';
 import { Dashboard } from '../pages/Dashboard';
 import { AddItem } from '../pages/api/AddItem';
-import {ListingPage} from '../pages/api/ListingPage';
+import { ListingPage } from '../pages/api/ListingPage';
+import { DetailsPage } from '../pages/api/DetailsPage';
 import { ThemeProvider } from 'styled-components';
 import { COLORS } from '../constant/COLORS';
 import { store } from '../redux/store'
@@ -24,6 +25,7 @@ export const Routing = () => {
               <StackPublic.Screen name="Next Page" component={NextPage} />
               <StackPublic.Screen name="Register New User" component={AddItem} />
               <StackPublic.Screen name="Listing User" component={ListingPage} />
+              <StackPublic.Screen name="User Details" component={DetailsPage} />
             </StackPublic.Navigator>
           </NavigationContainer>
         </ThemeProvider>
